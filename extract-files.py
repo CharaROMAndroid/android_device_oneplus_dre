@@ -72,6 +72,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcrypto_shim.so'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
     'vendor/bin/init.kernel.post_boot-blair.sh': blob_fixup()
         .patch_file('blob-patches/init-post-boot-blair.patch'),
     'vendor/bin/init.kernel.post_boot-holi.sh': blob_fixup()
@@ -99,6 +101,11 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('SRGB', 'sRGB'),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
         .add_needed('libcamera_metadata_shim.so'),
+    (
+        'vendor/lib64/libdpps.so',
+        'vendor/lib64/libsnapdragoncolor-manager.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

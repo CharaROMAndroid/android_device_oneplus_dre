@@ -40,3 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=OnePlusN200 \
     SystemDevice=OnePlusN200 \
     SystemName=OnePlusN200
+
+# Set Chaos Engineer Identifier
+CHARA_MAINTAINER := Chara

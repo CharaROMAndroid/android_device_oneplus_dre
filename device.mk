@@ -421,3 +421,8 @@ PRODUCT_PACKAGES += \
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/dre/dre-vendor.mk)
+
+# "OxygenOS" Version
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.rom.version=$(ANDROID_VERSION)
+    

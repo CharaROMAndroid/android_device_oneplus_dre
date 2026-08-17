@@ -16,3 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_dre.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_dre-user \
+    lineage_dre-userdebug \
+    lineage_dre-eng
